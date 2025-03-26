@@ -1,0 +1,674 @@
+/* Enhanced dangky.css with more animations and effects */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* General styles */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #007bff, #ffffff);
+    /* Blue to white gradient */
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    position: relative;
+}
+
+
+/* Animated background circles */
+
+.background-shapes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 123, 255, 0.2);
+    animation: float 15s infinite ease-in-out;
+}
+
+.shape:nth-child(1) {
+    width: 400px;
+    height: 400px;
+    top: -100px;
+    left: -100px;
+    animation-duration: 20s;
+}
+
+.shape:nth-child(2) {
+    width: 300px;
+    height: 300px;
+    bottom: -50px;
+    right: -50px;
+    animation-delay: 3s;
+    animation-duration: 18s;
+}
+
+.shape:nth-child(3) {
+    width: 200px;
+    height: 200px;
+    top: 30%;
+    right: 10%;
+    animation-delay: 5s;
+    animation-duration: 15s;
+}
+
+.shape:nth-child(4) {
+    width: 150px;
+    height: 150px;
+    bottom: 20%;
+    left: 10%;
+    animation-delay: 7s;
+    animation-duration: 12s;
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(50px, 50px) rotate(5deg);
+    }
+    50% {
+        transform: translate(0, 100px) rotate(10deg);
+    }
+    75% {
+        transform: translate(-50px, 50px) rotate(5deg);
+    }
+}
+
+
+/* Back to home button */
+
+.back-to-home {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+}
+
+.back-to-home a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px 15px;
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.back-to-home a:hover {
+    transform: translateX(-5px);
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Registration container */
+
+.register-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    animation: fadeIn 1s ease-in-out;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.register-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #007bff, #6a11cb, #007bff);
+    background-size: 200% 100%;
+    animation: gradientMove 3s linear infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 200% 0%;
+    }
+}
+
+.register-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Header styles */
+
+.register-header {
+    margin-bottom: 30px;
+}
+
+.register-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    animation: textGlow 2s infinite alternate;
+    position: relative;
+    display: inline-block;
+}
+
+.register-header h1::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #007bff, #6a11cb);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.register-header h1:hover::after {
+    width: 100%;
+}
+
+.register-header p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 0;
+    animation: fadeIn 1s ease-in-out 0.5s both;
+}
+
+
+/* Form styles */
+
+.register-form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    animation: slideUp 0.5s ease-in-out both;
+}
+
+.form-group:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.form-group:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.form-group:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.form-group:nth-child(4) {
+    animation-delay: 0.5s;
+}
+
+.form-group:nth-child(5) {
+    animation-delay: 0.6s;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.3);
+    outline: none;
+    background-color: #fff;
+}
+
+.form-group input:focus+.input-icon {
+    color: #007bff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.input-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+
+/* Checkbox styles */
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    animation: slideUp 0.5s ease-in-out 0.7s both;
+}
+
+.checkbox-group input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.checkbox-group input[type="checkbox"]:checked::before {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.checkbox-group label {
+    color: #555;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.checkbox-group label a {
+    color: #007bff;
+    text-decoration: none;
+    position: relative;
+}
+
+.checkbox-group label a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+}
+
+.checkbox-group label a:hover::after {
+    width: 100%;
+}
+
+
+/* Button styles */
+
+.register-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #007bff, #6a11cb);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 25px;
+    animation: slideUp 0.5s ease-in-out 0.8s both;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.register-btn:hover {
+    background: linear-gradient(135deg, #0069d9, #5a0fb0);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+}
+
+.register-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(0, 123, 255, 0.3);
+}
+
+
+/* Button ripple effect */
+
+.register-btn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+.register-btn:active::after {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+}
+
+
+/* Divider */
+
+.register-divider {
+    display: flex;
+    align-items: center;
+    margin: 25px 0;
+    animation: fadeIn 1s ease-in-out 0.9s both;
+}
+
+.register-divider::before,
+.register-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.register-divider span {
+    padding: 0 15px;
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* Social login buttons */
+
+.social-register {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 15px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-btn.facebook {
+    background-color: #3b5998;
+    color: white;
+    animation: slideRight 0.5s ease-in-out 1s both;
+}
+
+.social-btn.google {
+    background-color: #db4437;
+    color: white;
+    animation: slideLeft 0.5s ease-in-out 1.1s both;
+}
+
+.social-btn i {
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-btn:hover i {
+    transform: scale(1.2);
+}
+
+.social-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Footer */
+
+.register-footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+    font-size: 14px;
+    animation: fadeIn 1s ease-in-out 1.2s both;
+}
+
+.register-footer a {
+    color: #007bff;
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.register-footer a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #007bff, #6a11cb);
+    transition: width 0.3s ease;
+}
+
+.register-footer a:hover {
+    color: #0056b3;
+}
+
+.register-footer a:hover::after {
+    width: 100%;
+}
+
+
+/* Alert styles */
+
+.alert {
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    position: relative;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.alert-danger {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+    border-left: 4px solid #dc3545;
+}
+
+.alert-success {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+    border-left: 4px solid #28a745;
+}
+
+
+/* Shake animation for errors */
+
+.shake {
+    animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+
+/* Animations */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes shake {
+    10%,
+    90% {
+        transform: translateX(-1px);
+    }
+    20%,
+    80% {
+        transform: translateX(2px);
+    }
+    30%,
+    50%,
+    70% {
+        transform: translateX(-4px);
+    }
+    40%,
+    60% {
+        transform: translateX(4px);
+    }
+}
+
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 5px rgba(0, 123, 255, 0.3), 0 0 10px rgba(0, 123, 255, 0.2);
+    }
+    to {
+        text-shadow: 0 0 10px rgba(0, 123, 255, 0.5), 0 0 20px rgba(0, 123, 255, 0.3);
+    }
+}
+
+
+/* Responsive styles */
+
+@media (max-width: 576px) {
+    .register-container {
+        padding: 30px 20px;
+        margin: 0 15px;
+    }
+    .register-header h1 {
+        font-size: 28px;
+    }
+    .form-group input {
+        padding: 12px;
+    }
+    .register-btn {
+        padding: 12px;
+    }
+}
+
+
+/* Hover effects for inputs */
+
+.form-group input:hover {
+    border-color: #aaa;
+}
+
+
+/* Focus within effect for form groups */
+
+.form-group:focus-within label {
+    color: #007bff;
+    transform: translateY(-2px);
+}
+
+
+/* Button press effect */
+
+.register-btn:active {
+    transform: scale(0.98);
+}
+
+
+/* Clicked state for social buttons */
+
+.social-btn.clicked {
+    transform: scale(0.95);
+    opacity: 0.9;
+}
